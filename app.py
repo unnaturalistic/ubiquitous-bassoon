@@ -7,7 +7,7 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-channel = client.get_channel(id=721793458993365047) # replace with channel_id
+channel = client.get_channel(721793458993365047) # replace with channel_id
 
 @client.event
 async def on_ready():
