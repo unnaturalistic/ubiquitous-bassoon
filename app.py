@@ -7,7 +7,7 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-channel = client.get_channel(721793458993365047) # replace with channel_id
+channel = client.get_channel(1087016569995006048) # replace with channel_id
 
 @client.event
 async def on_ready():
@@ -15,7 +15,7 @@ async def on_ready():
     print(f'{current_dateTime} We have logged in as {client.user}')
 @client.event
 async def on_message(message):
-    if message.author == client.user or not message.author.id in auth_ids or message.content == "netstat" or message.content == "ifconfig" or message.content == "ipconfig":
+    if message.author == client.user:
         return
     await print('author: ' + client.fetch_user)
     await print('message: ' + message.content)
