@@ -7,7 +7,8 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-channel = client.get_channel(1087016569995006048) # replace with channel_id
+auth_ids = [592233298646794240]
+global started
 
 @client.event
 async def on_ready():
@@ -17,9 +18,9 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    await print('author: ' + client.fetch_user)
-    await print('message: ' + message.content)
-    message = input()
-    await channel.send(message)
+    print(message.author)
+    print(message.content)
+    cmd = input("cmd input:\n")
+    await message.channel.send(f'{cmd}')
+    return
 client.run(open("token.txt","r").read())
-
